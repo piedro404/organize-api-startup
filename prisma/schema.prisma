@@ -17,5 +17,27 @@ model User {
   email    String  @unique
   password String
 
+  Tasks    Tasks[]
+
   @@map("users")
+}
+
+model Tasks {
+  id         Int      @id @default(autoincrement())
+  externalId String   @unique @default(uuid()) @map("external_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  userId   Int    @map("user_id")
+  userHash String @map("user_hash")
+
+  title       String
+  description String?
+  status      String    @default("to_do")
+  completedAt DateTime? @map("completed_at")
+  dueDate     DateTime? @map("due_date")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("tasks")
 }

@@ -26,5 +26,5 @@ export const AWS_CONFIG = {
   endpoint: process.env.AWS_ENDPOINT || '',
   accessKeyId: process.env.AWS_ACCESS_KEY_ID || '',
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
-  bucket: process.env.AWS_BUCKET || 'adote-pets',
+  bucket: process.env.AWS_BUCKET || 'organize',
 }
