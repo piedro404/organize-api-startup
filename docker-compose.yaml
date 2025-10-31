@@ -1,0 +1,44 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: organize-api-startup
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - organize-db:/app/prisma     
+    restart: always
+    networks:
+      - organize-network
+
+  prisma-studio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: organize-prisma-studio
+    env_file:
+      - .env
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - organize-db:/app/prisma      
+    command: npx prisma studio --port 5555 --hostname 0.0.0.0
+    depends_on:
+      - app
+    restart: always
+    networks:
+      - organize-network
+
+volumes:
+  organize-db:
+
+networks:
+  organize-network:
+    driver: bridge
