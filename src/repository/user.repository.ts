@@ -26,8 +26,6 @@ export default class UserRepository {
         name: data.name!,
         email: data.email!,
         password: data.password!,
-        phone: data.phone || null,
-        avatar: avatarUrl,
       },
     });
   }
@@ -36,8 +34,6 @@ export default class UserRepository {
     const updateData: any = {
       name: data.name,
       password: data.password,
-      phone: data.phone,
-      avatar: data.avatar,
     };
 
     return await prismaClient.user.update({

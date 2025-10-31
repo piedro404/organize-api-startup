@@ -26,15 +26,6 @@ export const registerSchema = z
                 50,
                 "A confirmação de senha deve ter no máximo 50 caracteres."
             ),
-        avatar: z
-            .any()
-            .nullable()
-            .optional(),
-        phone: z
-            .string()
-            .max(20, "O telefone deve ter no máximo 20 caracteres.")
-            .nullable()
-            .optional(),
     })
     .refine((data) => data.password === data.passwordConfirmation, {
         message: "As senhas devem ser iguais.",
@@ -47,11 +38,6 @@ export const updateProfileSchema = z
             .string()
             .min(1, "O nome é obrigatório.")
             .max(100, "O nome deve ter no máximo 100 caracteres.")
-            .optional(),
-        phone: z
-            .string()
-            .max(20, "O telefone deve ter no máximo 20 caracteres.")
-            .nullable()
             .optional(),
         oldPassword: z
             .string()
@@ -67,10 +53,6 @@ export const updateProfileSchema = z
             .string()
             .min(8, "A confirmação de senha deve ter no mínimo 8 caracteres.")
             .max(50, "A confirmação de senha deve ter no máximo 50 caracteres.")
-            .optional(),
-        avatar: z
-            .any()
-            .nullable()
             .optional(),
     })
     .refine(
