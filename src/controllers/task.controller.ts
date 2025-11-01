@@ -1,3 +1,4 @@
+import { logger } from "@config/logger";
 import { Request, Response, NextFunction } from "express";
 import { UnauthorizedException } from "src/exceptions/unauthorized";
 import TaskRepository from "src/repository/task.repository";
@@ -72,11 +73,16 @@ export async function createTask(
         const taskData: CreateTaskRequest = createTaskSchema.parse(req.body);
         const { user, userHash } = await UserService.getUser(req);
 
+        logger.info({
+            userId: user?.id,
+            userHash,
+        }, "Creating a new task");
+
         let newTaskData: any = {
             ...taskData,
         };
-        newTaskData.user_id = user?.id;
-        newTaskData.user_hash = userHash;
+        newTaskData.userId = user?.id;
+        newTaskData.userHash = userHash;
 
         const newTask = await TaskRepository.createTask(newTaskData);
 
