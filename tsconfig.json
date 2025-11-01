@@ -17,8 +17,32 @@
       "@controllers/*": [
         "src/controllers/*"
       ],
+      "@exceptions/*": [
+        "src/exceptions/*"
+      ],
+      "@middlewares/*": [
+        "src/middlewares/*"
+      ],
+      "@repository/*": [
+        "src/repository/*"
+      ],
+      "@resources/*": [
+        "src/resources/*"
+      ],
       "@routes/*": [
         "src/routes/*"
+      ],
+      "@schemas/*": [
+        "src/schemas/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
       ],
     },
     "strict": true,

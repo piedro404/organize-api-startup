@@ -1,0 +1,2017 @@
+{
+	"info": {
+		"_postman_id": "b85423d7-7b7f-4af2-a89d-35c251ee1982",
+		"name": "organize",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36606064"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "tasks",
+					"item": [
+						{
+							"name": "tasks.index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}auth/tasks",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}auth/tasks",
+											"host": [
+												"{{base_url}}auth"
+											],
+											"path": [
+												"tasks"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "700"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2bc-7tB2ekUrEYw2FnD1UzzRJeS4rD8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Nov 2025 20:07:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Tarefas recuperadas com sucesso\",\n    \"data\": {\n        \"tasks\": {\n            \"in_progress\": [\n                {\n                    \"externalId\": \"8873094f-fa66-45ea-a6a2-1957ab6ac510\",\n                    \"createdAt\": \"2025-11-01T20:06:33.455Z\",\n                    \"updatedAt\": \"2025-11-01T20:06:33.455Z\",\n                    \"title\": \"Lavar a Roupa\",\n                    \"description\": \"Usar maquina de lavar. Disorver sabão em pó antes\",\n                    \"status\": \"in_progress\",\n                    \"completedAt\": null,\n                    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n                },\n                {\n                    \"externalId\": \"980d20af-3ab5-4426-805f-b1703e695041\",\n                    \"createdAt\": \"2025-11-01T20:06:59.187Z\",\n                    \"updatedAt\": \"2025-11-01T20:06:59.187Z\",\n                    \"title\": \"Lavar a Roupa\",\n                    \"description\": \"Usar maquina de lavar. Disorver sabão em pó antes\",\n                    \"status\": \"in_progress\",\n                    \"completedAt\": null,\n                    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n                }\n            ]\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "tasks.show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}auth/tasks/980d20af-3ab5-4426-805f-b1703e695041",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"tasks",
+										"980d20af-3ab5-4426-805f-b1703e695041"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "401",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}auth/tasks/bf9339d7-cdf9-4d27-93d1-8b83365742c4",
+											"host": [
+												"{{base_url}}auth"
+											],
+											"path": [
+												"tasks",
+												"bf9339d7-cdf9-4d27-93d1-8b83365742c4"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "123"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"7b-KsGMdjwyPejpYL6oqf9m0OKXCzw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Nov 2025 20:10:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": false,\n    \"message\": \"Você não tem permissão para atualizar esta tarefa.\",\n    \"errorCode\": \"UNAUTHORIZED\",\n    \"errors\": null\n}"
+								},
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}auth/tasks/980d20af-3ab5-4426-805f-b1703e695041",
+											"host": [
+												"{{base_url}}auth"
+											],
+											"path": [
+												"tasks",
+												"980d20af-3ab5-4426-805f-b1703e695041"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "401"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"191-+vdPcyV4XtF+oZqC3B33spbPf1I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Nov 2025 20:11:13 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Tarefa recuperada com sucesso\",\n    \"data\": {\n        \"task\": {\n            \"externalId\": \"980d20af-3ab5-4426-805f-b1703e695041\",\n            \"createdAt\": \"2025-11-01T20:06:59.187Z\",\n            \"updatedAt\": \"2025-11-01T20:08:55.773Z\",\n            \"title\": \"Lavar meu Banheiro\",\n            \"description\": \"Usar maquina de lavar. Disorver sabão em pó antes\",\n            \"status\": \"completed\",\n            \"completedAt\": \"2025-11-01T20:08:55.772Z\",\n            \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "tasks.store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lavar a Roupa\",\n    \"description\": \"Usar maquina de lavar. Disorver sabão em pó antes\",\n    \"status\": \"in_progress\",\n    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}auth/tasks",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "201",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"Lavar a Roupa\",\n    \"description\": \"Usar maquina de lavar. Disorver sabão em pó antes\",\n    \"status\": \"in_progress\",\n    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}auth/tasks",
+											"host": [
+												"{{base_url}}auth"
+											],
+											"path": [
+												"tasks"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "372"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"174-uAse4y9euR2v1zFSSsVuvsJ8s4I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Nov 2025 20:06:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Tarefa criada com sucesso\",\n    \"data\": {\n        \"task\": {\n            \"externalId\": \"980d20af-3ab5-4426-805f-b1703e695041\",\n            \"createdAt\": \"2025-11-01T20:06:59.187Z\",\n            \"updatedAt\": \"2025-11-01T20:06:59.187Z\",\n            \"title\": \"Lavar a Roupa\",\n            \"description\": \"Usar maquina de lavar. Disorver sabão em pó antes\",\n            \"status\": \"in_progress\",\n            \"completedAt\": null,\n            \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "tasks.update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lavar meu Banheiro\",\n    \"status\": \"completed\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}auth/tasks/980d20af-3ab5-4426-805f-b1703e695041",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"tasks",
+										"980d20af-3ab5-4426-805f-b1703e695041"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "204",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"Lavar meu Banheiro\",\n    \"status\": \"completed\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}auth/tasks/8873094f-fa66-45ea-a6a2-1957ab6ac510",
+											"host": [
+												"{{base_url}}auth"
+											],
+											"path": [
+												"tasks",
+												"8873094f-fa66-45ea-a6a2-1957ab6ac510"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"191-CB8eGNGtSDPGTo+tUvfIebvQ9fg\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Nov 2025 20:07:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "401",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"Lavar meu Banheiro\",\n    \"status\": \"completed\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}auth/tasks/bf9339d7-cdf9-4d27-93d1-8b83365742c4",
+											"host": [
+												"{{base_url}}auth"
+											],
+											"path": [
+												"tasks",
+												"bf9339d7-cdf9-4d27-93d1-8b83365742c4"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "123"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"7b-KsGMdjwyPejpYL6oqf9m0OKXCzw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Nov 2025 20:09:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": false,\n    \"message\": \"Você não tem permissão para atualizar esta tarefa.\",\n    \"errorCode\": \"UNAUTHORIZED\",\n    \"errors\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "tasks.delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}auth/tasks/8873094f-fa66-45ea-a6a2-1957ab6ac510",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"tasks",
+										"8873094f-fa66-45ea-a6a2-1957ab6ac510"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "204",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}auth/tasks/8873094f-fa66-45ea-a6a2-1957ab6ac510",
+											"host": [
+												"{{base_url}}auth"
+											],
+											"path": [
+												"tasks",
+												"8873094f-fa66-45ea-a6a2-1957ab6ac510"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"43-vHS4Rm5bOJChA75UR5XRTsNYwQc\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 01 Nov 2025 20:07:48 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "auth.login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Obter a resposta da API como objeto JSON",
+									"let response = pm.response.json();",
+									"",
+									"// Configurar o token na variável de coleção",
+									"pm.collectionVariables.set(\"token\", response.data.token);",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"pedro.henrique.martins404@gmail.com\",\n    \"password\": \"pedroerosa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}auth/login",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "**Descrição:**  \n  \nRealiza o **login do usuário** na plataforma.  \n  \nEste endpoint autentica as credenciais (e-mail e senha) e retorna um **token JWT**, que deve ser usado nas próximas requisições autenticadas via cabeçalho `Authorization: Bearer` ."
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"login\": \"matheuszinho@gmail.com\",\n    \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}auth/login",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "462"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ce-dkWEdbR3UQH20TnqLQY4JoNNCIQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 22:00:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"user\": {\n            \"externalId\": \"bd7554e3-bd30-46e0-9df3-13ec887fc0ad\",\n            \"createdAt\": \"2025-10-31T22:00:15.728Z\",\n            \"updatedAt\": \"2025-10-31T22:00:15.728Z\",\n            \"name\": \"Matheus \",\n            \"email\": \"matheuszinho@gmail.com\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHRlcm5hbElkIjoiYmQ3NTU0ZTMtYmQzMC00NmUwLTlkZjMtMTNlYzg4N2ZjMGFkIiwiaWF0IjoxNzYxOTQ4MDE5LCJleHAiOjE3NjQ2MjY0MTl9.h3Ai12HrkxmAR-QD4iQok88PllTwBdwZZxTN7Bc-kkM\"\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"login\": \"pedro.henrique.martins404@gmail.com\",\n    \"password\": \"pedroerosa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}auth/login",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "496"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f0-HxsGbw/WpcbWbs6f28iMvLK1xG0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 22:02:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"user\": {\n            \"externalId\": \"a7cc6863-f77a-462c-891b-63973b18ffff\",\n            \"createdAt\": \"2025-10-31T22:01:24.578Z\",\n            \"updatedAt\": \"2025-10-31T22:01:24.578Z\",\n            \"name\": \"Pedro Henrique Martins Borges\",\n            \"email\": \"pedro.henrique.martins404@gmail.com\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHRlcm5hbElkIjoiYTdjYzY4NjMtZjc3YS00NjJjLTg5MWItNjM5NzNiMThmZmZmIiwiaWF0IjoxNzYxOTQ4MTQ4LCJleHAiOjE3NjQ2MjY1NDh9.9Q-Eb9FL9Iqe-3NeT7sh5ZeZZlF3YR6zSRMZc7vtwjc\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "auth.register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pedro Henrique Martins Borges",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pedro.henrique.martins404@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pedroerosa",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirmation",
+									"value": "pedroerosa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/register",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "**Descrição:**  \n  \nCria um **novo usuário** na plataforma.  \n  \nEste endpoint cadastra o usuário com as informações básicas (nome, e-mail, senha, telefone e opcionalmente uma imagem de perfil/avatar).  \n  \nApós o cadastro, o usuário já pode realizar login via `/api/auth/login`."
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Matheus ",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "matheuszinho@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "passwordConfirmation",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}auth/register",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-oclQ7ntccsY6MIXlhTg2PvxcgmU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 22:00:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"externalId\": \"bd7554e3-bd30-46e0-9df3-13ec887fc0ad\",\n            \"createdAt\": \"2025-10-31T22:00:15.728Z\",\n            \"updatedAt\": \"2025-10-31T22:00:15.728Z\",\n            \"name\": \"Matheus \",\n            \"email\": \"matheuszinho@gmail.com\"\n        }\n    }\n}"
+						},
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Pedro Henrique Martins Borges",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "pedro.henrique.martins404@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pedroerosa",
+											"type": "text"
+										},
+										{
+											"key": "passwordConfirmation",
+											"value": "pedroerosa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}auth/register",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "289"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"121-1h2E1UhyE+DnL1TVg46KJ9zZZGQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 22:01:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"externalId\": \"a7cc6863-f77a-462c-891b-63973b18ffff\",\n            \"createdAt\": \"2025-10-31T22:01:24.578Z\",\n            \"updatedAt\": \"2025-10-31T22:01:24.578Z\",\n            \"name\": \"Pedro Henrique Martins Borges\",\n            \"email\": \"pedro.henrique.martins404@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "auth.me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}auth/me",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"me"
+							]
+						},
+						"description": "**Descrição:**  \n  \nRetorna os dados do usuário atualmente autenticado com base no token JWT fornecido no cabeçalho `Authorization`.  \n  \nÚtil para exibir informações do perfil logado ou verificar sessão ativa."
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}auth/me",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "254"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fe-JLMvIZmMPaREV8Cw3bCYQmVjVVA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 22:00:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"user\": {\n            \"externalId\": \"bd7554e3-bd30-46e0-9df3-13ec887fc0ad\",\n            \"createdAt\": \"2025-10-31T22:00:15.728Z\",\n            \"updatedAt\": \"2025-10-31T22:00:15.728Z\",\n            \"name\": \"Matheus \",\n            \"email\": \"matheuszinho@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "auth.update-profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pedro Henrique MB",
+									"type": "text"
+								},
+								{
+									"key": "oldPassword",
+									"value": "pedroerosa1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pedroerosa",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirmation",
+									"value": "pedroerosa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/update-profile",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"update-profile"
+							]
+						},
+						"description": "**Descrição:**  \n  \nAtualiza os dados do perfil do usuário autenticado. Permite alterar nome, avatar e senha. O endpoint exige autenticação via JWT."
+					},
+					"response": [
+						{
+							"name": "204",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Pedro Henrique MB",
+											"type": "text"
+										},
+										{
+											"key": "oldPassword",
+											"value": "pedroerosa1",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pedroerosa",
+											"type": "text"
+										},
+										{
+											"key": "passwordConfirmation",
+											"value": "pedroerosa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}auth/update-profile",
+									"host": [
+										"{{base_url}}auth"
+									],
+									"path": [
+										"update-profile"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-kfI26H1nIrSmwoeSZlN5OpvR6z4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 22:03:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "tasks.index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization_Hash",
+								"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}unauth/tasks",
+							"host": [
+								"{{base_url}}unauth"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}unauth/tasks",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "632"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"278-N0T5/DmJ3n5NFbAiersSlX6XoYA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 19:51:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Tarefas recuperadas com sucesso\",\n    \"data\": {\n        \"tasks\": {\n            \"to_do\": [\n                {\n                    \"externalId\": \"93cb9c4c-1ae8-4431-9b40-07195daf3991\",\n                    \"createdAt\": \"2025-11-01T19:50:14.491Z\",\n                    \"updatedAt\": \"2025-11-01T19:50:14.491Z\",\n                    \"title\": \"Limpar meu Quarto\",\n                    \"description\": \"Varrer e passar o pano\",\n                    \"status\": \"to_do\",\n                    \"completedAt\": null,\n                    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n                },\n                {\n                    \"externalId\": \"bf9339d7-cdf9-4d27-93d1-8b83365742c4\",\n                    \"createdAt\": \"2025-11-01T19:50:56.351Z\",\n                    \"updatedAt\": \"2025-11-01T19:50:56.351Z\",\n                    \"title\": \"Limpar meu Quarto\",\n                    \"description\": \"Varrer e passar o pano\",\n                    \"status\": \"to_do\",\n                    \"completedAt\": null,\n                    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n                }\n            ]\n        }\n    }\n}"
+						},
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}unauth/tasks",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "943"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3af-x9QAOXY3TZ6JSaZQdka/mDp48+I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 19:55:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Tarefas recuperadas com sucesso\",\n    \"data\": {\n        \"tasks\": {\n            \"to_do\": [\n                {\n                    \"externalId\": \"bf9339d7-cdf9-4d27-93d1-8b83365742c4\",\n                    \"createdAt\": \"2025-11-01T19:50:56.351Z\",\n                    \"updatedAt\": \"2025-11-01T19:50:56.351Z\",\n                    \"title\": \"Limpar meu Quarto\",\n                    \"description\": \"Varrer e passar o pano\",\n                    \"status\": \"to_do\",\n                    \"completedAt\": null,\n                    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n                }\n            ],\n            \"in_progress\": [\n                {\n                    \"externalId\": \"3e2b8e15-a0e4-4f11-a9ea-f4bec0903cf7\",\n                    \"createdAt\": \"2025-11-01T19:51:55.908Z\",\n                    \"updatedAt\": \"2025-11-01T19:54:14.446Z\",\n                    \"title\": \"Lavar a Roupa\",\n                    \"description\": null,\n                    \"status\": \"in_progress\",\n                    \"completedAt\": null,\n                    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n                }\n            ],\n            \"completed\": [\n                {\n                    \"externalId\": \"93cb9c4c-1ae8-4431-9b40-07195daf3991\",\n                    \"createdAt\": \"2025-11-01T19:50:14.491Z\",\n                    \"updatedAt\": \"2025-11-01T19:54:50.924Z\",\n                    \"title\": \"Lavar meu Banheiro\",\n                    \"description\": \"Varrer e passar o pano\",\n                    \"status\": \"completed\",\n                    \"completedAt\": \"2025-11-01T19:54:50.923Z\",\n                    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "tasks.show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization_Hash",
+								"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}unauth/tasks/bf9339d7-cdf9-4d27-93d1-8b83365742c4",
+							"host": [
+								"{{base_url}}unauth"
+							],
+							"path": [
+								"tasks",
+								"bf9339d7-cdf9-4d27-93d1-8b83365742c4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}unauth/tasks/bf9339d7-cdf9-4d27-93d1-8b83365742c4",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks",
+										"bf9339d7-cdf9-4d27-93d1-8b83365742c4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "345"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"159-SA49prce62MvzlO3xGSKlm+erm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 20:10:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Tarefa recuperada com sucesso\",\n    \"data\": {\n        \"task\": {\n            \"externalId\": \"bf9339d7-cdf9-4d27-93d1-8b83365742c4\",\n            \"createdAt\": \"2025-11-01T19:50:56.351Z\",\n            \"updatedAt\": \"2025-11-01T19:50:56.351Z\",\n            \"title\": \"Limpar meu Quarto\",\n            \"description\": \"Varrer e passar o pano\",\n            \"status\": \"to_do\",\n            \"completedAt\": null,\n            \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "tasks.store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization_Hash",
+								"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Lavar a Ropa\",\n    \"status\": \"in_progress\",\n    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}unauth/tasks",
+							"host": [
+								"{{base_url}}unauth"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Limpar meu Quarto\",\n    \"description\": \"Varrer e passar o pano\",\n    \"status\": \"to_do\",\n    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}unauth/tasks",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "341"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"155-2FqWxhUAi5vX6dk5c7jCSLiFiY8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 19:50:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Tarefa criada com sucesso\",\n    \"data\": {\n        \"task\": {\n            \"externalId\": \"bf9339d7-cdf9-4d27-93d1-8b83365742c4\",\n            \"createdAt\": \"2025-11-01T19:50:56.351Z\",\n            \"updatedAt\": \"2025-11-01T19:50:56.351Z\",\n            \"title\": \"Limpar meu Quarto\",\n            \"description\": \"Varrer e passar o pano\",\n            \"status\": \"to_do\",\n            \"completedAt\": null,\n            \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n        }\n    }\n}"
+						},
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lavar a Ropa\",\n    \"status\": \"in_progress\",\n    \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}unauth/tasks",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "322"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"142-1a05oPnrTlfNTq06XJVMZwbjREs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 19:51:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Tarefa criada com sucesso\",\n    \"data\": {\n        \"task\": {\n            \"externalId\": \"3e2b8e15-a0e4-4f11-a9ea-f4bec0903cf7\",\n            \"createdAt\": \"2025-11-01T19:51:55.908Z\",\n            \"updatedAt\": \"2025-11-01T19:51:55.908Z\",\n            \"title\": \"Lavar a Ropa\",\n            \"description\": null,\n            \"status\": \"in_progress\",\n            \"completedAt\": null,\n            \"dueDate\": \"2025-11-01T20:00:00.000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "tasks.update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization_Hash",
+								"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Lavar meu Banheiro\",\n    \"status\": \"completed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}unauth/tasks/93cb9c4c-1ae8-4431-9b40-07195daf3991",
+							"host": [
+								"{{base_url}}unauth"
+							],
+							"path": [
+								"tasks",
+								"93cb9c4c-1ae8-4431-9b40-07195daf3991"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lavar meu Banheiro\",\n    \"status\": \"in_progress\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}unauth/tasks/93cb9c4c-1ae8-4431-9b40-07195daf3991",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks",
+										"93cb9c4c-1ae8-4431-9b40-07195daf3991"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15f-7yn2h+JrWPIf9qMoQnJ1Nv488ms\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 19:53:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "204",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lavar meu Banheiro\",\n    \"status\": \"completed\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}unauth/tasks/93cb9c4c-1ae8-4431-9b40-07195daf3991",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks",
+										"93cb9c4c-1ae8-4431-9b40-07195daf3991"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"174-ASv6qEvSbh3qqYR+QWAYbjCNjf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 19:54:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "422",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lavar meu Banheiro\",\n    \"status\": \"asdasd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}unauth/tasks/93cb9c4c-1ae8-4431-9b40-07195daf3991",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks",
+										"93cb9c4c-1ae8-4431-9b40-07195daf3991"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-6K5G/w4K0Q4+/ZpT714MPpefW9E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 19:55:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Validation Error\",\n    \"errorCode\": \"VALIDATION_ERROR\",\n    \"errors\": [\n        {\n            \"code\": \"invalid_value\",\n            \"values\": [\n                \"to_do\",\n                \"in_progress\",\n                \"completed\"\n            ],\n            \"path\": [\n                \"status\"\n            ],\n            \"message\": \"Invalid option: expected one of \\\"to_do\\\"|\\\"in_progress\\\"|\\\"completed\\\"\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "tasks.delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization_Hash",
+								"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}unauth/tasks/93cb9c4c-1ae8-4431-9b40-07195daf3991",
+							"host": [
+								"{{base_url}}unauth"
+							],
+							"path": [
+								"tasks",
+								"93cb9c4c-1ae8-4431-9b40-07195daf3991"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "204",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization_Hash",
+										"value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}unauth/tasks/93cb9c4c-1ae8-4431-9b40-07195daf3991",
+									"host": [
+										"{{base_url}}unauth"
+									],
+									"path": [
+										"tasks",
+										"93cb9c4c-1ae8-4431-9b40-07195daf3991"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-vHS4Rm5bOJChA75UR5XRTsNYwQc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Nov 2025 20:01:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}",
+							"host": [
+								"{{base_url}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "464"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d0-5FpZHdW3eMXxUCX2mD7oRVhgqk0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Oct 2025 21:57:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"API is running\",\n    \"data\": {\n        \"name\": \"OrgaNize API\",\n        \"version\": \"1.0.0\",\n        \"description\": \"API para o sistema de organização de tarefas\",\n        \"docsUrl\": \"/docs\",\n        \"authors\": [\n            {\n                \"name\": \"Pedro Henrique Martins Borges\",\n                \"github\": \"https://github.com/piedro404\",\n                \"picture\": \"https://avatars.githubusercontent.com/u/88720549?v=4\"\n            },\n            {\n                \"name\": \"Matheus Augusto\",\n                \"github\": \"https://github.com/Matheuz233\",\n                \"picture\": \"https://avatars.githubusercontent.com/u/138679799?v=4\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost/api/"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

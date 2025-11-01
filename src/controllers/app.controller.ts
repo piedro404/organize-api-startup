@@ -14,7 +14,7 @@ export async function home(
             name: 'OrgaNize API', 
             version: '1.0.0', 
             description: 'API para o sistema de organização de tarefas',
-            docsUrl: '/docs',
+            docsUrl: '/',
             authors: [
                 { 
                     name: 'Pedro Henrique Martins Borges', 

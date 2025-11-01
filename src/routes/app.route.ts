@@ -4,6 +4,14 @@ import apiRouter from './api.route';
 
 const router = Router();
 
+router.get('/', (req, res) => {
+    res.sendFile(path.resolve("./src/templates/docs.html"));
+});
+
+router.get('/openapi.yaml', (req, res) => {
+    res.sendFile(path.resolve("./src/static/openapi.yaml"));
+});
+
 router.get('/favicon.ico', (req, res) => {
     res.sendFile(path.resolve("./src/static/favicon.ico"));
 });

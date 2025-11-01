@@ -1,0 +1,451 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Organize API",
+    "version": "1.0.0",
+    "description": "Documentação gerada a partir da coleção Postman da API Organize."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api"
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "Registrar novo usuário",
+        "description": "Cria um novo usuário na plataforma.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirmation": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email",
+                  "password",
+                  "passwordConfirmation"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso."
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Login do usuário",
+        "description": "Autentica um usuário e retorna um token JWT.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "login": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "login",
+                  "password"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login realizado com sucesso."
+          }
+        }
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "summary": "Dados do usuário autenticado",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário autenticado retornado com sucesso."
+          }
+        }
+      }
+    },
+    "/auth/update-profile": {
+      "put": {
+        "summary": "Atualizar perfil do usuário",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "oldPassword": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirmation": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Perfil atualizado com sucesso."
+          }
+        }
+      }
+    },
+    "/auth/tasks": {
+      "get": {
+        "summary": "Listar tarefas (autenticado)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tarefas listadas com sucesso."
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar tarefa (autenticado)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "dueDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "required": [
+                  "title"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Tarefa criada com sucesso."
+          }
+        }
+      }
+    },
+    "/auth/tasks/{id}": {
+      "get": {
+        "summary": "Obter tarefa (autenticado)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tarefa retornada com sucesso."
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualizar tarefa (autenticado)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Tarefa atualizada com sucesso."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir tarefa (autenticado)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Tarefa excluída com sucesso."
+          }
+        }
+      }
+    },
+    "/unauth/tasks": {
+      "get": {
+        "summary": "Listar tarefas (sem autenticação)",
+        "parameters": [
+          {
+            "name": "Authorization_Hash",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tarefas listadas com sucesso."
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar tarefa (sem autenticação)",
+        "parameters": [
+          {
+            "name": "Authorization_Hash",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "dueDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Tarefa criada com sucesso."
+          }
+        }
+      }
+    },
+    "/unauth/tasks/{id}": {
+      "get": {
+        "summary": "Obter tarefa (sem autenticação)",
+        "parameters": [
+          {
+            "name": "Authorization_Hash",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tarefa retornada com sucesso."
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualizar tarefa (sem autenticação)",
+        "parameters": [
+          {
+            "name": "Authorization_Hash",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Tarefa atualizada com sucesso."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir tarefa (sem autenticação)",
+        "parameters": [
+          {
+            "name": "Authorization_Hash",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Tarefa excluída com sucesso."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
