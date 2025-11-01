@@ -1,7 +1,8 @@
-import { signup, login, me, updateProfile } from '@controllers/auth.controller';
 import { Router } from 'express';
-import authMiddleware from 'src/middlewares/auth.middleware';
+import taskRouter from './tasks/task.route'
 
 const router = Router();
+
+router.use('/tasks', taskRouter);
 
 export default router;

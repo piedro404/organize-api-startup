@@ -23,8 +23,9 @@ export async function getTasks(
     next: NextFunction
 ) {
     try {
-        const { user, userHash } = await UserService.getUser(req);
         const filters: QueryRequest = req.query;
+        const { user, userHash } = await UserService.getUser(req);
+        
         const tasksGroupedByStatus =
             await TaskRepository.getTasksGroupedByStatus(
                 filters,
