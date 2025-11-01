@@ -163,13 +163,3 @@ Projeto base — ajuste os créditos conforme sua equipe.
 Qualquer dúvida ou sugestão, me chame: pedro.henrique.martins404@gmail.com
 
 ---
-
-✨ README atualizado com o estilo iconográfico (emojis) — igual ao projeto que você gostou.
-
-Próximos opcionais que posso fazer para melhorar ainda mais:
-- ✨ Sincronizar a seção de Endpoints com os caminhos exatos em `src/routes` (posso varrer e atualizar automaticamente);
-- 🧾 Gerar um `.env.example` completo e com comentários;
-- 📬 Adicionar exemplos `curl` e um pequeno guia de autenticação com token.
-
-Diga qual desses extras prefere que eu faça agora.
-
