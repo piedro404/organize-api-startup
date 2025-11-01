@@ -1,4 +1,5 @@
 import { prismaClient } from "@config/database";
+import { User } from "@prisma/client";
 import { RegisterRequest, UpdateProfileRequest } from "src/schemas/auth.schema";
 
 export default class UserRepository {
@@ -19,8 +20,6 @@ export default class UserRepository {
   }
 
   static async createUser(data: RegisterRequest) {
-    let avatarUrl = null;
-
     return await prismaClient.user.create({
       data: {
         name: data.name!,

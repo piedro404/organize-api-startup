@@ -24,4 +24,11 @@ export enum ErrorCodes {
   INVALID_FILE = 'INVALID_FILE',
   INVALID_PARAMETERS = 'INVALID_PARAMETERS',
   REQUEST_NOT_FOUND = "REQUEST_NOT_FOUND",
+  NOT_FOUND = "NOT_FOUND",
+}
+
+export enum TaskStatus {
+  TO_DO = 'to_do',
+  IN_PROGRESS = 'in_progress',
+  COMPLETED = 'completed',
 }
